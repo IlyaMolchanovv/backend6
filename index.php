@@ -7,6 +7,7 @@ $_SESSION['token'] = uniqid();
 $token = $_SESSION['token'];
 <input type = "hidden" name="token_del"
 <?php print "value='$token""; ?>>
+}
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $messages = array();
     if (!empty($_COOKIE['save'])) {

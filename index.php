@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $stmt = $db->prepare("SELECT * FROM heroes2 WHERE login = ?");
             $stmt->execute([$l]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $values['fio'] = $row['fio'];
-            $values['email'] = $row['email'];
+            $values['fio'] = strip_tags($row['fio']);
+            $values['email'] = strip_tags($row['email']);
             $values['date'] = $row['date'];
             $values['gender'] = $row['gender'];
             $values['arms'] = $row['arms'];
